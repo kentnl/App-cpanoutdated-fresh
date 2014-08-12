@@ -124,6 +124,7 @@ allow_includes = 1
 
 [Documentation::PodSpelling]
 spell_command = aspell list --lang en_US
+stop_words = metacpan TIMESPEC cpan API
 
 [Documentation::ProhibitAdjacentLinks]
 
@@ -165,7 +166,7 @@ spell_command = aspell list --lang en_US
 
 [ErrorHandling::RequireCheckingReturnValueOfEval]
 
-[ErrorHandling::RequireUseOfExceptions]
+[-ErrorHandling::RequireUseOfExceptions]
 
 [InputOutput::ProhibitBacktickOperators]
 
@@ -264,7 +265,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [Moose::RequireMakeImmutable]
 
-[NamingConventions::Capitalization]
+[-NamingConventions::Capitalization]
 
 [NamingConventions::ProhibitAmbiguousNames]
 
