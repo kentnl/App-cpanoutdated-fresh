@@ -9,6 +9,7 @@ META.json
 META.yml
 Makefile.PL
 README
+bin/cpan-outdated-fresh
 dist.ini
 dist.ini.meta
 lib/App/cpanoutdated/fresh.pm
