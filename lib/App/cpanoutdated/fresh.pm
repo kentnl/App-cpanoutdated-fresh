@@ -103,7 +103,7 @@ sub _mk_scroll {
       authorized date indexed
       directory maturity release
       status version
-      )
+      ),
   ];
 
   my %scrollargs = (
@@ -120,14 +120,14 @@ sub _mk_scroll {
   else {
     $body->{sort} = { 'stat.mtime' => $self->_sort };
   }
-  my $scroll = $self->es->scroll_helper(%scrollargs);
+  return $self->es->scroll_helper(%scrollargs);
 }
 
 sub _check_fresh {
   my ( $self, $data_hash, $module ) = @_;
   return unless $module->{indexed} and $module->{authorized} and $module->{version};
 
-  my (@parts) = split /::/, $module->{name};
+  my (@parts) = split /::/msx, $module->{name};
   $parts[-1] .= '.pm';
 
   my $file = $self->_inc_scanner->first_file(@parts);
@@ -137,7 +137,10 @@ sub _check_fresh {
   return if not $mm;
 
   my $v = version->parse( $module->{version} );
-  return unless $mm->version < $v;
+
+  if ( $mm->version >= $v ) {
+    return;
+  }
 
   return {
     name      => $module->{name},
