@@ -88,7 +88,8 @@ This application bears much resemblance to L<< cpan-outdated|App::cpanoutdated >
 
 One of the big features of using the C<MetaCPAN> API, is the ability to filter results into a time bracket.
 
-As such, this application can tells you only about updates that happened to things you have installed C<IF> they've been recently updated.
+As such, this application can tells you only about updates that happened to things you have installed C<IF> they've been
+recently updated.
 
 For instance, one problem I kept facing was this:
 
@@ -126,7 +127,8 @@ Essentially rewarding you for frequent use by being fast for frequent use.
 
 Unfortunately, this optimization has a trade-off, namely, it scales very poorly vs time, due to exponential growth.
 
-C<cpan-outdated> uses C<02packages>, which has its limits, and its inefficiencies, but the inefficiencies are effectively constant due to old packages getting pruned from C<02packages> as newer versions replace them.
+C<cpan-outdated> uses C<02packages>, which has its limits, and its inefficiencies, but the inefficiencies are effectively
+constant due to old packages getting pruned from C<02packages> as newer versions replace them.
 
 So:
 
