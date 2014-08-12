@@ -5,12 +5,13 @@ use strict;
 use warnings;
 use utf8;
 
-package #
-  App::cpanoutdated::fresh::script;
+package App::cpanoutdated::fresh::script;
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
 # PODNAME: cpan-outdated-fresh
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 our $VERSION = '0.001000';
 
