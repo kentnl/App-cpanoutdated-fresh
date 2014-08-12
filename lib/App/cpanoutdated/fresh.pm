@@ -26,8 +26,6 @@ use version;
 
 
 
-
-
 has ua => ( is => 'ro', predicate => 'has_ua' );
 lsub trace => sub { undef };
 lsub es => sub {
@@ -304,14 +302,7 @@ Shorthand for
 
   $class->new_from_command->run();
 
-=begin Pod::Coverage
-
-
-
-
-=end Pod::Coverage
-
-ua has_ua
+=for Pod::Coverage ua has_ua
 
 =head1 AUTHOR
 
