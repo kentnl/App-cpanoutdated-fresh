@@ -5,7 +5,8 @@ use strict;
 use warnings;
 use utf8;
 
-package App::cpanoutdated::fresh::script;
+package    # hide
+  App::cpanoutdated::fresh::script;
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
