@@ -34,6 +34,10 @@ requires:
   utf8: '0'
   version: '0'
   warnings: '0'
+resources:
+  bugtracker: https://github.com/kentnl/App-cpanoutdated-fresh/issues
+  homepage: https://github.com/kentnl/App-cpanoutdated-fresh
+  repository: https://github.com/kentnl/App-cpanoutdated-fresh.git
 version: '0.001000'
 x_BuiltWith:
   modules:
