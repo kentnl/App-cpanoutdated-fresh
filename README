@@ -52,7 +52,7 @@ DESCRIPTION
     One of the big features of using the "MetaCPAN" API, is the ability to
     filter results into a time bracket.
 
-    As such, this application can tells you only about updates that happened
+    As such, this application can tell you only about updates that happened
     to things you have installed "IF" they've been recently updated.
 
     For instance, one problem I kept facing was this:
