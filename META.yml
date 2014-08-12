@@ -125,6 +125,10 @@ x_Dist_Zilla:
     version: '5.021001'
   plugins:
     -
+      class: Dist::Zilla::Plugin::ExecDir
+      name: ExecDir
+      version: '5.020'
+    -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'
       version: '5.020'
@@ -544,10 +548,6 @@ x_Dist_Zilla:
           phase: develop
           type: requires
       name: '@Author::KENTNL/::Role::BundleDeps'
-      version: '5.020'
-    -
-      class: Dist::Zilla::Plugin::ExecDir
-      name: ExecDir
       version: '5.020'
     -
       class: Dist::Zilla::Plugin::Prereqs

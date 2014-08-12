@@ -214,6 +214,11 @@
       },
       "plugins" : [
          {
+            "class" : "Dist::Zilla::Plugin::ExecDir",
+            "name" : "ExecDir",
+            "version" : "5.020"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::KENTNL/MetaConfig",
             "version" : "5.020"
@@ -763,11 +768,6 @@
                }
             },
             "name" : "@Author::KENTNL/::Role::BundleDeps",
-            "version" : "5.020"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::ExecDir",
-            "name" : "ExecDir",
             "version" : "5.020"
          },
          {

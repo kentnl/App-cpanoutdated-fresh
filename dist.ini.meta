@@ -8,6 +8,8 @@ copyright_holder = Kent Fredric <kentfredric@gmail.com>
 ; Uncomment this to bootstrap via self
 ; [Bootstrap::lib]
 
+[ExecDir]
+
 [@Author::KENTNL]
 :version          = 2.017000
 git_versions      = 1
@@ -20,5 +22,5 @@ copyfiles         = LICENSE
 srcreadme         = mkdn
 twitter_hash_tags = #perl #cpan
 ; auto_prereqs_skip = File::Find
-[ExecDir]
+
 [Prereqs]
