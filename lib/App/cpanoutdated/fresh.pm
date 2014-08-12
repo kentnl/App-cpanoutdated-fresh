@@ -22,6 +22,12 @@ use Path::ScanINC;
 use Pod::Usage qw( pod2usage );
 use version;
 
+
+
+
+
+
+
 has ua => ( is => 'ro', predicate => 'has_ua' );
 lsub trace => sub { undef };
 lsub es => sub {
@@ -183,6 +189,14 @@ sub _get_next {
   return;
 }
 
+
+
+
+
+
+
+
+
 sub new_from_command {
   my ( $class, $defaults ) = @_;
   Getopt::Long::Configure('bundling');
@@ -222,6 +236,14 @@ sub new_from_command {
   return $class->new(%{$defaults});
 }
 
+
+
+
+
+
+
+
+
 sub run {
   my ($self) = @_;
   my $iterator = $self->_mk_scroll;
@@ -230,6 +252,14 @@ sub run {
   }
   return 0;
 }
+
+
+
+
+
+
+
+
 
 sub run_command {
   my ($class) = @_;
@@ -253,6 +283,35 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 =head1 VERSION
 
 version 0.001000
+
+=head1 METHODS
+
+=head2 new_from_command
+
+Create an instance of this class parsing options from C<@ARGV>
+
+  my $instance = App::cpanoutdated::fresh->new_from_command;
+
+=head2 run
+
+Execute the main logic and printing found modules to C<STDOUT>
+
+  $object->run;
+
+=head2 run_command
+
+Shorthand for 
+
+  $class->new_from_command->run();
+
+=begin Pod::Coverage
+
+
+
+
+=end Pod::Coverage
+
+ua has_ua
 
 =head1 AUTHOR
 
