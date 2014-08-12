@@ -44,21 +44,21 @@ version 0.001000
     --develop        Include development releases in output
     --devel
     --dev
-    
+
     --no-develop     Exclude development releases from output (default)
     --no-devel
     --no-dev
 
     --authorized     Show only authorized releases in output (default)
     --authed
-    
+
     --no-authorized  Show even unauthorized releases in output
     --no-authed
 
 =head2 TIMESPEC
 
   <int seconds>
-  <int><multiplier> 
+  <int><multiplier>
 
 =head3 multipliers
 
