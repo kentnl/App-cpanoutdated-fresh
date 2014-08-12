@@ -237,6 +237,7 @@ sub run {
   while ( my $result = $self->_get_next($iterator) ) {
     printf "%s\@%s\n", $result->{name}, $result->{cpan};
   }
+  return 0;
 }
 
 sub run_command {
