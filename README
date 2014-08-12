@@ -38,6 +38,81 @@ SYNOPSIS
       M = 31 days
       Y = 365 days
 
+DESCRIPTION
+    This application bears much resemblance to cpan-outdated, but with a few
+    important differences.
+
+    *   MetaCPAN Driven
+
+    *   "--dev" supported
+
+    *   Temporal difference comparison.
+
+  Temporal difference comparison
+    One of the big features of using the "MetaCPAN" API, is the ability to
+    filter results into a time bracket.
+
+    As such, this application can tells you only about updates that happened
+    to things you have installed "IF" they've been recently updated.
+
+    For instance, one problem I kept facing was this:
+
+      $ cpan-outdated
+      # Broken::Package
+      $ cpanm Broken::Package
+      # Broken::Package is broken!
+      ... wait a few days
+      $ cpan-outdated
+      # Broken::Package
+      $ cpanm Broken::Package
+      # Broken::Package is broken!
+      ... doh
+      ... repeat.
+
+    With this app, as soon as "Broken::Package" falls outside the "age"
+    window, you stop getting told about it.
+
+    DU;DC - Didn't Update, Don't Care.
+
+    This also has a benefit that if you run it very frequently, you can get
+    a speed boost by narrowing the update window.
+
+      $ time
+      # 12:00 
+      $ cpan-outdated
+      # install ALL the things
+      ... wait a while
+      $ time
+      #  1:00
+      $ cpan-outdated-fresh -a 1h 
+      # One update
+
+    Essentially rewarding you for frequent use by being fast for frequent
+    use.
+
+   Downside
+    Unfortunately, this optimisation has a tradeoff, namely, it scales very
+    poorly vs time, due to exponential growth.
+
+    "cpan-outdated" uses "02packages", which has its limits, and its
+    inefficiencies, but the inefficiences are effectively constant due to
+    old packages getting pruned from "02packages" as newer versions replace
+    them.
+
+    So:
+
+      cpan-outdated-fresh -a 30d
+
+    Will take substantially more time to execute than
+
+      cpan-outdated
+
+    We've tried to combat this by trimming some cycles, but they may still
+    prove over-zealous.
+
+    However, this approach is still going to give you "--dev" results that
+    "cpan-outdated" can't deliver.
+
 SEE ALSO
     *   "App::cpanoutdated::fresh"
 

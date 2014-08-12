@@ -238,44 +238,6 @@ sub run_command {
 
 no Moo;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -291,42 +253,6 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 =head1 VERSION
 
 version 0.001000
-
-=head1 SYNOPSIS
-
-  cpan-outdated-fresh [--args]
-
-    --age  TIMESPEC  The maximum age for a release (default: 7d)
-     -a    TIMESPEC
-
-    --develop        Include development releases in output
-    --devel
-    --dev
-
-    --no-develop     Exclude development releases from output (default)
-    --no-devel
-    --no-dev
-
-    --authorized     Show only authorized releases in output (default)
-    --authed
-
-    --no-authorized  Show even unauthorized releases in output
-    --no-authed
-
-=head2 TIMESPEC
-
-  <int seconds>
-  <int><multiplier>
-
-=head3 multipliers
-
-  s = second
-  m = minute
-  h = hour
-  d = day
-  w = 7 days
-  M = 31 days
-  Y = 365 days
 
 =head1 AUTHOR
 
