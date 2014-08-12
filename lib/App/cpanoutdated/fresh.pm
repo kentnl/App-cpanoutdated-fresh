@@ -168,7 +168,7 @@ sub _get_next {
 
     #  pp($data_hash);
     next if exists $stash_cache->{$cache_key};
-    next if !$self->developer and 'developer' eq $data_hash->{maturity};
+    next if not $self->developer and 'developer' eq $data_hash->{maturity};
 
     next if $data_hash->{path} =~ /\Ax?t\//msx;
     next unless $data_hash->{path} =~ /\.pm\z/msx;
@@ -182,6 +182,7 @@ sub _get_next {
     }
     $stash_cache->{$cache_key} = 1;
   }
+  return;
 }
 
 sub new_from_command {
@@ -216,20 +217,11 @@ sub new_from_command {
   ) or do { $help = 1 };
   if ( $help or $man ) {
     if ($help) {
-      return pod2usage(
-        {
-          -exitval => 1,
-        }
-      );
+      return pod2usage( { -exitval => 1, }, );
     }
-    return pod2usage(
-      {
-        -exitval => 1,
-        -verbose => 2,
-      }
-    );
+    return pod2usage( { -exitval => 1, -verbose => 2, }, );
   }
-  return $class->new(%$defaults);
+  return $class->new(%{$defaults});
 }
 
 sub run {
