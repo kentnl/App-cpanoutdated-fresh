@@ -18,6 +18,20 @@ use App::cpanoutdated::fresh;
 
 exit App::cpanoutdated::fresh->run_command;
 
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan releases backwards
+
+=head1 VERSION
+
+version 0.001000
+
 =head1 SYNOPSIS
 
   cpan-outdated-fresh [--args]
@@ -61,5 +75,16 @@ exit App::cpanoutdated::fresh->run_command;
 =item * L<< C<App::cpanoutdated::fresh>|App::cpanoutdated::fresh >>
 
 =back
+
+=head1 AUTHOR
+
+Kent Fredric <kentfredric@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

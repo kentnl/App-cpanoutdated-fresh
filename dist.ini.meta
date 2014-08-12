@@ -20,5 +20,5 @@ copyfiles         = LICENSE
 srcreadme         = mkdn
 twitter_hash_tags = #perl #cpan
 ; auto_prereqs_skip = File::Find
-
+[ExecDir]
 [Prereqs]

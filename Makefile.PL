@@ -16,7 +16,9 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => 0
   },
   "DISTNAME" => "cpan-outdated-fresh",
-  "EXE_FILES" => [],
+  "EXE_FILES" => [
+    "bin/cpan-outdated-fresh"
+  ],
   "LICENSE" => "perl",
   "NAME" => "cpan::outdated::fresh",
   "PREREQ_PM" => {
