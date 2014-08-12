@@ -14,7 +14,7 @@ license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
-name: cpan-outdated-fresh
+name: App-cpanoutdated-fresh
 provides:
   App::cpanoutdated::fresh:
     file: lib/App/cpanoutdated/fresh.pm
