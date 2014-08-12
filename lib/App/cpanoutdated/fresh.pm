@@ -21,7 +21,7 @@ use Search::Elasticsearch;
 use Search::Elasticsearch::Scroll;
 use Module::Metadata;
 use Path::ScanINC;
-use Pod::Usage;
+use Pod::Usage qw( pod2usage );
 use version;
 
 has ua => ( is => 'ro', predicate => 'has_ua' );
@@ -190,11 +190,11 @@ sub new_from_command {
   my ( $help, $man );
   Getopt::Long::GetOptions(
     'age|a=s' => sub {
-      my ( $opt, $value ) = @_;
+      my ( undef, $value ) = @_;
       $defaults->{age} = $value;
     },
     'develop|devel|dev!' => sub {
-      my ( $opt, $value ) = @_;
+      my ( undef, $value ) = @_;
       if ($value) {
         $defaults->{developer} = 1;
         return;
@@ -202,7 +202,7 @@ sub new_from_command {
       $defaults->{developer} = undef;
     },
     'authorized|authed!' => sub {
-      my ( $opt, $value ) = @_;
+      my ( undef, $value ) = @_;
       if ($value) {
         $defaults->{authorized} = 1;
       }
