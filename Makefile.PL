@@ -15,10 +15,10 @@ my %WriteMakefileArgs = (
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
-  "DISTNAME" => "App-cpanoutdated-fresh",
+  "DISTNAME" => "cpan-outdated-fresh",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
-  "NAME" => "App::cpanoutdated::fresh",
+  "NAME" => "cpan::outdated::fresh",
   "PREREQ_PM" => {
     "Carp" => 0,
     "Data::Dump" => 0,
