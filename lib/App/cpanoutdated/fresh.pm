@@ -9,8 +9,6 @@ our $VERSION = '0.001000';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
-# PODNAME: cpan-outdated-fresh
-
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Carp qw( croak );
@@ -171,7 +169,7 @@ sub _get_next {
     next if not $self->developer and 'developer' eq $data_hash->{maturity};
 
     next if $data_hash->{path} =~ /\Ax?t\//msx;
-    next unless $data_hash->{path} =~ /\.pm\z/msx;
+    next unless $data_hash->{path} =~ /[.]pm\z/msx;
     next unless $data_hash->{module};
     next unless @{ $data_hash->{module} };
     for my $module ( @{ $data_hash->{module} } ) {
@@ -288,7 +286,7 @@ __END__
 
 =head1 NAME
 
-cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan releases backwards
+App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan releases backwards
 
 =head1 VERSION
 
