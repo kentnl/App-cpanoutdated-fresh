@@ -1,5 +1,5 @@
 NAME
-    App::cpanoutdated::fresh - Indicate out-of-date modules by walking the
+    cpan-outdated-fresh - Indicate out-of-date modules by walking the
     metacpan releases backwards
 
 VERSION

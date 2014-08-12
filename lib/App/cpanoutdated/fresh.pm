@@ -9,6 +9,8 @@ our $VERSION = '0.001000';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
+# PODNAME: cpan-outdated-fresh
+
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Carp qw( croak );
@@ -292,7 +294,7 @@ __END__
 
 =head1 NAME
 
-App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan releases backwards
+cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan releases backwards
 
 =head1 VERSION
 
