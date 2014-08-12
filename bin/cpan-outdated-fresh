@@ -111,22 +111,22 @@ B<DU;DC> - Didn't Update, Don't Care.
 This also has a benefit that if you run it very frequently, you can get a speed boost by narrowing the update window.
 
   $ time
-  # 12:00 
+  # 12:00
   $ cpan-outdated
   # install ALL the things
   ... wait a while
   $ time
   #  1:00
-  $ cpan-outdated-fresh -a 1h 
+  $ cpan-outdated-fresh -a 1h
   # One update
 
 Essentially rewarding you for frequent use by being fast for frequent use.
 
 =head3 Downside
 
-Unfortunately, this optimisation has a tradeoff, namely, it scales very poorly vs time, due to exponential growth.
+Unfortunately, this optimization has a trade-off, namely, it scales very poorly vs time, due to exponential growth.
 
-C<cpan-outdated> uses C<02packages>, which has its limits, and its inefficiencies, but the inefficiences are effectively constant due to old packages getting pruned from C<02packages> as newer versions replace them.
+C<cpan-outdated> uses C<02packages>, which has its limits, and its inefficiencies, but the inefficiencies are effectively constant due to old packages getting pruned from C<02packages> as newer versions replace them.
 
 So:
 

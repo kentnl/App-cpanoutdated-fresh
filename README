@@ -78,24 +78,24 @@ DESCRIPTION
     a speed boost by narrowing the update window.
 
       $ time
-      # 12:00 
+      # 12:00
       $ cpan-outdated
       # install ALL the things
       ... wait a while
       $ time
       #  1:00
-      $ cpan-outdated-fresh -a 1h 
+      $ cpan-outdated-fresh -a 1h
       # One update
 
     Essentially rewarding you for frequent use by being fast for frequent
     use.
 
    Downside
-    Unfortunately, this optimisation has a tradeoff, namely, it scales very
+    Unfortunately, this optimization has a trade-off, namely, it scales very
     poorly vs time, due to exponential growth.
 
     "cpan-outdated" uses "02packages", which has its limits, and its
-    inefficiencies, but the inefficiences are effectively constant due to
+    inefficiencies, but the inefficiencies are effectively constant due to
     old packages getting pruned from "02packages" as newer versions replace
     them.
 
