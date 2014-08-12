@@ -1,5 +1,5 @@
 ---
-abstract: '# AUTHORITY'
+abstract: 'Indicate out-of-date modules by walking the metacpan releases backwards'
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
@@ -20,15 +20,27 @@ provides:
     file: lib/App/cpanoutdated/fresh.pm
     version: '0.001000'
 requires:
+  Carp: '0'
+  Data::Dump: '0'
+  Getopt::Long: '0'
+  Module::Metadata: '0'
   Moo: '0'
+  MooX::Lsub: '0'
+  Path::ScanINC: '0'
+  Pod::Usage: '0'
+  Search::Elasticsearch: '0'
+  Search::Elasticsearch::Scroll: '0'
   perl: '5.008'
   strict: '0'
   utf8: '0'
+  version: '0'
   warnings: '0'
 version: '0.001000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
+    Carp: '1.34'
+    Data::Dump: '1.22'
     Dist::Zilla::App::Command::bakeini: '0.001001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
@@ -76,8 +88,15 @@ x_BuiltWith:
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.017000'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.48'
+    Getopt::Long: '2.42'
+    Module::Metadata: '1.000024'
     Moo: '1.005000'
+    MooX::Lsub: '0.001002'
+    Path::ScanINC: '1.000001'
     Pod::Coverage::TrustPod: '0.100003'
+    Pod::Usage: '1.64'
+    Search::Elasticsearch: '1.14'
+    Search::Elasticsearch::Scroll: '1.14'
     Test::CPAN::Changes: '0.30'
     Test::CPAN::Meta: '0.23'
     Test::Kwalitee: '1.19'
@@ -86,6 +105,7 @@ x_BuiltWith:
     Test::Pod::Coverage: '1.10'
     strict: '1.08'
     utf8: '1.14'
+    version: '0.9908'
     warnings: '1.24'
   perl:
     original: v5.21.1

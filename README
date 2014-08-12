@@ -1,8 +1,42 @@
 NAME
-    App::cpanoutdated::fresh - # AUTHORITY
+    App::cpanoutdated::fresh - Indicate out-of-date modules by walking the
+    metacpan releases backwards
 
 VERSION
     version 0.001000
+
+SYNOPSIS
+      cpan-outdated-fresh [--args]
+
+        --age  TIMESPEC  The maximum age for a release (default: 7d)
+         -a    TIMESPEC
+
+        --develop        Include development releases in output
+        --devel
+        --dev
+    
+        --no-develop     Exclude development releases from output (default)
+        --no-devel
+        --no-dev
+
+        --authorized     Show only authorized releases in output (default)
+        --authed
+    
+        --no-authorized  Show even unauthorized releases in output
+        --no-authed
+
+  TIMESPEC
+      <int seconds>
+      <int><multiplier>
+
+   multipliers
+      s = second
+      m = minute
+      h = hour
+      d = day
+      w = 7 days
+      M = 31 days
+      Y = 365 days
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>

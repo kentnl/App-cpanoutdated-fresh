@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker ;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "# AUTHORITY",
+  "ABSTRACT" => "Indicate out-of-date modules by walking the metacpan releases backwards",
   "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
@@ -20,9 +20,19 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "App::cpanoutdated::fresh",
   "PREREQ_PM" => {
+    "Carp" => 0,
+    "Data::Dump" => 0,
+    "Getopt::Long" => 0,
+    "Module::Metadata" => 0,
     "Moo" => 0,
+    "MooX::Lsub" => 0,
+    "Path::ScanINC" => 0,
+    "Pod::Usage" => 0,
+    "Search::Elasticsearch" => 0,
+    "Search::Elasticsearch::Scroll" => 0,
     "strict" => 0,
     "utf8" => 0,
+    "version" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -38,12 +48,22 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Carp" => 0,
+  "Data::Dump" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
+  "Getopt::Long" => 0,
+  "Module::Metadata" => 0,
   "Moo" => 0,
+  "MooX::Lsub" => 0,
+  "Path::ScanINC" => 0,
+  "Pod::Usage" => 0,
+  "Search::Elasticsearch" => 0,
+  "Search::Elasticsearch::Scroll" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,
+  "version" => 0,
   "warnings" => 0
 );
 

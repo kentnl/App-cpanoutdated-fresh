@@ -66,10 +66,20 @@ do { my $x = {
                     },
        'runtime' => {
                       'requires' => {
+                                      'Carp' => '0',
+                                      'Data::Dump' => '0',
+                                      'Getopt::Long' => '0',
+                                      'Module::Metadata' => '0',
                                       'Moo' => '0',
+                                      'MooX::Lsub' => '0',
+                                      'Path::ScanINC' => '0',
+                                      'Pod::Usage' => '0',
+                                      'Search::Elasticsearch' => '0',
+                                      'Search::Elasticsearch::Scroll' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
+                                      'version' => '0',
                                       'warnings' => '0'
                                     }
                     },
