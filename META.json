@@ -82,7 +82,6 @@
       "runtime" : {
          "requires" : {
             "Carp" : "0",
-            "Data::Dump" : "0",
             "Getopt::Long" : "0",
             "Module::Metadata" : "0",
             "Moo" : "0",
@@ -123,7 +122,6 @@
       "modules" : {
          "CPAN::Meta" : "2.142060",
          "Carp" : "1.34",
-         "Data::Dump" : "1.22",
          "Dist::Zilla::App::Command::bakeini" : "0.001001",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",

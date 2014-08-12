@@ -23,7 +23,6 @@ my %WriteMakefileArgs = (
   "NAME" => "cpan::outdated::fresh",
   "PREREQ_PM" => {
     "Carp" => 0,
-    "Data::Dump" => 0,
     "Getopt::Long" => 0,
     "Module::Metadata" => 0,
     "Moo" => 0,
@@ -51,7 +50,6 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Carp" => 0,
-  "Data::Dump" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Getopt::Long" => 0,

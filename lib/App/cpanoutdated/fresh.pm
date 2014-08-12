@@ -57,7 +57,7 @@ lsub age_seconds => sub {
     'M' => ( 31 * 24 * 60 * 60 ),
     'Y' => ( 365 * 24 * 60 * 60 ),
   };
-  return $self->age + 0 unless my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([a-z])\z/;
+  return $self->age + 0 unless my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([[:lower:]])\z/msx;
   if ( not exists $table->{$multiplier} ) {
     croak("Unknown time multiplier <$multiplier>");
   }
@@ -72,8 +72,6 @@ lsub all_versions => sub { undef };
 lsub authorized   => sub { 1 };
 lsub _inc_scanner => sub { Path::ScanINC->new() };
 
-use Data::Dump qw(pp);
-
 sub _mk_scroll {
   my ($self) = @_;
 
@@ -83,8 +81,8 @@ sub _mk_scroll {
         'stat.mtime' => {
           gte => $self->min_timestamp,
         },
-      }
-    }
+      },
+    },
   };
   if ( not $self->developer or $self->authorized ) {
     $body->{filter} ||= {};
