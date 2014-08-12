@@ -300,7 +300,7 @@ Execute the main logic and printing found modules to C<STDOUT>
 
 =head2 run_command
 
-Shorthand for 
+Shorthand for
 
   $class->new_from_command->run();
 
