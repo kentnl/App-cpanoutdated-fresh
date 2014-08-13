@@ -14,6 +14,10 @@ dist.ini
 dist.ini.meta
 lib/App/cpanoutdated/fresh.pm
 maint/perlcritic.rc.gen.pl
+misc/Changes.deps
+misc/Changes.deps.all
+misc/Changes.deps.dev
+misc/Changes.deps.opt
 misc/perlcritic.deps
 perlcritic.rc
 t/00-compile/lib_App_cpanoutdated_fresh_pm.t
