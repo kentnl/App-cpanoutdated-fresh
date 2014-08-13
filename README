@@ -3,7 +3,7 @@ NAME
     metacpan releases backwards
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
       cpan-outdated-fresh [--args]
