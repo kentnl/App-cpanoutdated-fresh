@@ -234,7 +234,7 @@ sub new_from_command {
     }
     return pod2usage( { -exitval => 1, -verbose => 2, }, );
   }
-  return $class->new(%{$defaults});
+  return $class->new( %{$defaults} );
 }
 
 =method run
