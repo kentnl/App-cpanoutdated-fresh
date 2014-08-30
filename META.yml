@@ -5,7 +5,10 @@ author:
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  Test::More: '0.89'
+  HTTP::Tiny: '0'
+  Test::Differences: '0'
+  Test::Fatal: '0'
+  Test::More: '0.96'
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: '0'
@@ -18,7 +21,7 @@ name: App-cpanoutdated-fresh
 provides:
   App::cpanoutdated::fresh:
     file: lib/App/cpanoutdated/fresh.pm
-    version: '0.001001'
+    version: '0.001002'
 requires:
   Carp: '0'
   Getopt::Long: '0'
@@ -38,7 +41,7 @@ resources:
   bugtracker: https://github.com/kentnl/App-cpanoutdated-fresh/issues
   homepage: https://github.com/kentnl/App-cpanoutdated-fresh
   repository: https://github.com/kentnl/App-cpanoutdated-fresh.git
-version: '0.001001'
+version: '0.001002'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -92,6 +95,7 @@ x_BuiltWith:
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.49'
     Getopt::Long: '2.42'
+    HTTP::Tiny: '0.048'
     Module::Metadata: '1.000024'
     Moo: '1.006000'
     MooX::Lsub: '0.001003'
@@ -102,6 +106,8 @@ x_BuiltWith:
     Search::Elasticsearch::Scroll: '1.14'
     Test::CPAN::Changes: '0.30'
     Test::CPAN::Meta: '0.23'
+    Test::Differences: '0.62'
+    Test::Fatal: '0.013'
     Test::Kwalitee: '1.22'
     Test::More: '1.001003'
     Test::Pod: '1.48'
@@ -451,7 +457,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.001001-source
+          tag: 0.001002-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -505,7 +511,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.001001'
+          tag: '0.001002'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

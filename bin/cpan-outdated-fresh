@@ -14,7 +14,7 @@ package    # hide
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 use App::cpanoutdated::fresh;
 
@@ -32,7 +32,7 @@ cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan relea
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 

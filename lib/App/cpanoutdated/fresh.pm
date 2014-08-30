@@ -5,7 +5,7 @@ use utf8;
 
 package App::cpanoutdated::fresh;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
@@ -59,11 +59,14 @@ lsub age_seconds => sub {
     'M' => ( 31 * 24 * 60 * 60 ),
     'Y' => ( 365 * 24 * 60 * 60 ),
   };
-  return $self->age + 0 unless my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([[:lower:]])\z/msx;
-  if ( not exists $table->{$multiplier} ) {
-    croak("Unknown time multiplier <$multiplier>");
+  return $self->age + 0 if $self->age =~ /\A\d+([.]\d+)?\z/msx;
+  if ( my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([[:alpha:]]+)\z/msx ) {
+    if ( not exists $table->{$multiplier} ) {
+      croak("Unknown time multiplier <$multiplier>");
+    }
+    return $time * $table->{$multiplier};
   }
-  return $time * $table->{$multiplier};
+  croak( 'Cant parse age <' . $self->age . '>' );
 };
 lsub min_timestamp => sub {
   my ($self) = @_;
@@ -231,7 +234,7 @@ sub new_from_command {
     }
     return pod2usage( { -exitval => 1, -verbose => 2, }, );
   }
-  return $class->new(%{$defaults});
+  return $class->new( %{$defaults} );
 }
 
 
@@ -280,7 +283,7 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 METHODS
 
