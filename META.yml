@@ -1,7 +1,7 @@
 ---
 abstract: 'Indicate out-of-date modules by walking the metacpan releases backwards'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'

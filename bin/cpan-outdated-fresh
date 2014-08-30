@@ -152,7 +152,7 @@ However, this approach is still going to give you C<--dev> results that C<cpan-o
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
