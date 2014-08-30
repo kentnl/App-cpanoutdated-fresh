@@ -5,7 +5,7 @@ use utf8;
 
 package App::cpanoutdated::fresh;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
