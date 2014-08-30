@@ -1,9 +1,14 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 0.001001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::Contributors 0 → 0.006
+ - Test::Kwalitee 1.12 → 1.21
 
  [Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.017000 → 2.017002
+ - Dist::Zilla::App::Command::bakeini 0.001001 → 0.001002
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.017000 → 2.020000
 

@@ -11,8 +11,7 @@ copyright_holder = Kent Fredric <kentfredric@gmail.com>
 [ExecDir]
 
 [@Author::KENTNL]
-:version          = 2.017000
-git_versions      = 1
+:version          = 2.020000
 normal_form       = numify
 mantissa          = 6
 toolkit           = eumm
