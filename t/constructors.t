@@ -12,19 +12,18 @@ use Test::Fatal qw( exception );
 use App::cpanoutdated::fresh;
 
 sub canspawn {
-  my ( @args ) = @_;
+  my (@args) = @_;
   my $reason = pop @args;
   local @ARGV = @args;
-  is(exception{ App::cpanoutdated::fresh->new_from_command() }, undef , $reason );
+  is( exception { App::cpanoutdated::fresh->new_from_command() }, undef, $reason );
 }
 
 canspawn('no args');
-canspawn('--age=1h', 'age');
-canspawn('--dev', 'develop');
-canspawn('--no-dev', 'nodevelop');
-canspawn('--authed', 'authed');
-canspawn('--no-authed', 'noauthed');
+canspawn( '--age=1h',    'age' );
+canspawn( '--dev',       'develop' );
+canspawn( '--no-dev',    'nodevelop' );
+canspawn( '--authed',    'authed' );
+canspawn( '--no-authed', 'noauthed' );
 
 done_testing;
-
 

@@ -16,6 +16,14 @@ sub attr {
   my ($name) = @_;
   my $value;
   is( exception { $value = $instance->$name(); 1 }, undef, "Get attribute $name" );
+  return $value;
+}
+
+sub bad_attr {
+  my ($name) = @_;
+  my $value;
+  isnt( exception { $value = $instance->$name(); 1 }, undef, "Attribute $name should bail" )
+    or diag "Got: $value";
 }
 
 attr('trace');
@@ -31,9 +39,7 @@ attr('authorized');
 attr('_inc_scanner');
 
 use HTTP::Tiny;
-$instance = App::cpanoutdated::fresh->new(
-  ua => HTTP::Tiny->new()
-);
+$instance = App::cpanoutdated::fresh->new( ua => HTTP::Tiny->new() );
 
 attr('es');
 
@@ -43,6 +49,15 @@ $instance = App::cpanoutdated::fresh->new(
 );
 
 attr('es');
+
+$instance = App::cpanoutdated::fresh->new( age => '7notoneletter', );
+bad_attr('age_seconds');
+
+$instance = App::cpanoutdated::fresh->new( age => '7z', );
+bad_attr('age_seconds');
+
+$instance = App::cpanoutdated::fresh->new( age => '7Y', );
+attr('age_seconds');
 
 done_testing;
 
