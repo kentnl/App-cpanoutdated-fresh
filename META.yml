@@ -47,7 +47,7 @@ x_BuiltWith:
     CPAN::Meta: '2.142060'
     Carp: '1.34'
     Dist::Zilla::App::Command::bakeini: '0.001002'
-    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.003000'
+    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.003001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
     Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
@@ -98,7 +98,7 @@ x_BuiltWith:
     HTTP::Tiny: '0.048'
     Module::Metadata: '1.000024'
     Moo: '1.006000'
-    MooX::Lsub: '0.001003'
+    MooX::Lsub: '0.002000'
     Path::ScanINC: '1.000002'
     Pod::Coverage::TrustPod: '0.100003'
     Pod::Usage: '1.64'
@@ -391,7 +391,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
-      version: '0.003000'
+      version: '0.003001'
     -
       class: Dist::Zilla::Plugin::ReadmeFromPod
       name: '@Author::KENTNL/ReadmeFromPod'
