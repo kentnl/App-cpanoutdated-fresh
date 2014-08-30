@@ -14,7 +14,7 @@ package    # hide
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001001';
 
 use App::cpanoutdated::fresh;
 
@@ -32,7 +32,7 @@ cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan relea
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
@@ -152,7 +152,7 @@ However, this approach is still going to give you C<--dev> results that C<cpan-o
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

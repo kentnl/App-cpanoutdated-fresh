@@ -1,5 +1,16 @@
 Release history for App-cpanoutdated-fresh
 
+0.001001 2014-08-30T00:39:10Z
+ [00 Trivial]
+ - metadata
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001000, see misc/*.deps* for details
+ - develop: +1 ↑2 (suggests: ↑2)
+
+ [Metadata]
+ - Fix author
+
 0.001000 2014-08-13T01:49:59Z
  - First version.
 
