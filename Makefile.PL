@@ -40,6 +40,7 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
     "HTTP::Tiny" => 0,
+    "Test::Differences" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.96"
   },
@@ -63,6 +64,7 @@ my %FallbackPrereqs = (
   "Pod::Usage" => 0,
   "Search::Elasticsearch" => 0,
   "Search::Elasticsearch::Scroll" => 0,
+  "Test::Differences" => 0,
   "Test::Fatal" => 0,
   "Test::More" => "0.96",
   "strict" => 0,
