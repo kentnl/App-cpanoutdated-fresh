@@ -1,6 +1,8 @@
 Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
+
+0.001002 2014-08-30T10:32:13Z
  [Bugfix]
  - Fix parsing timestamps to work as described.
 
