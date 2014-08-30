@@ -114,7 +114,7 @@ However, this approach is still going to give you `--dev` results that `cpan-out
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
