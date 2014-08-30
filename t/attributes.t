@@ -32,14 +32,14 @@ attr('_inc_scanner');
 
 use HTTP::Tiny;
 $instance = App::cpanoutdated::fresh->new(
-  ua => HTTP::Tiny->new();
+  ua => HTTP::Tiny->new()
 );
 
 attr('es');
 
 $instance = App::cpanoutdated::fresh->new(
   trace => 1,
-  ua    => HTTP::Tiny->new();
+  ua    => HTTP::Tiny->new()
 );
 
 attr('es');
