@@ -62,5 +62,8 @@ attr('age_seconds');
 $instance = App::cpanoutdated::fresh->new( age => '7', );
 attr('age_seconds');
 
+$instance = App::cpanoutdated::fresh->new( age => '7.7.7', );
+bad_attr('age_seconds');
+
 done_testing;
 
