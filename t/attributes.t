@@ -10,7 +10,7 @@ use App::cpanoutdated::fresh;
 # CREATED: 08/30/14 22:00:04 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Test attributs
 
-my $instance => App::cpanoutdated::fresh->new();
+my $instance = App::cpanoutdated::fresh->new();
 
 sub attr {
   my ( $name ) = @_;
