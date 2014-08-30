@@ -13,9 +13,9 @@ use App::cpanoutdated::fresh;
 my $instance = App::cpanoutdated::fresh->new();
 
 sub attr {
-  my ( $name ) = @_;
+  my ($name) = @_;
   my $value;
-  is ( exception { $value = $instance->$name(); 1 }, undef, "Get attribute $name"); 
+  is( exception { $value = $instance->$name(); 1 }, undef, "Get attribute $name" );
 }
 
 attr('trace');
@@ -30,6 +30,19 @@ attr('all_versions');
 attr('authorized');
 attr('_inc_scanner');
 
-done_testing;
+use HTTP::Tiny;
+$instance = App::cpanoutdated::fresh->new(
+  ua => HTTP::Tiny->new();
+);
 
+attr('es');
+
+$instance = App::cpanoutdated::fresh->new(
+  trace => 1,
+  ua    => HTTP::Tiny->new();
+);
+
+attr('es');
+
+done_testing;
 

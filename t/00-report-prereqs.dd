@@ -92,6 +92,7 @@ do { my $x = {
                    'requires' => {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
+                                   'HTTP::Tiny' => '0',
                                    'Test::Fatal' => '0',
                                    'Test::More' => '0.96'
                                  }

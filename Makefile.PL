@@ -39,6 +39,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
+    "HTTP::Tiny" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.96"
   },
@@ -54,6 +55,7 @@ my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Getopt::Long" => 0,
+  "HTTP::Tiny" => 0,
   "Module::Metadata" => 0,
   "Moo" => 0,
   "MooX::Lsub" => 0,
