@@ -59,11 +59,14 @@ lsub age_seconds => sub {
     'M' => ( 31 * 24 * 60 * 60 ),
     'Y' => ( 365 * 24 * 60 * 60 ),
   };
-  return $self->age + 0 unless my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([[:lower:]])\z/msx;
-  if ( not exists $table->{$multiplier} ) {
-    croak("Unknown time multiplier <$multiplier>");
+  return $self->age + 0 if $self->age =~ /\A\d+([.]\d+)?\z/msx;
+  if ( my ( $time, $multiplier ) = $self->age =~ /\A(\d+)([[:alpha:]]+)\z/msx ) {
+    if ( not exists $table->{$multiplier} ) {
+      croak("Unknown time multiplier <$multiplier>");
+    }
+    return $time * $table->{$multiplier};
   }
-  return $time * $table->{$multiplier};
+  croak( 'Cant parse age <' . $self->age . '>' );
 };
 lsub min_timestamp => sub {
   my ($self) = @_;
