@@ -1,6 +1,8 @@
 Release history for App-cpanoutdated-fresh
 
-0.001004 2014-09-15T02:50:41Z
+0.001004 2014-09-15T07:25:00Z
+ [Bugfix]
+ - Handle module->version being undef
 
 0.001003 2014-09-15T02:48:14Z
  [Bugfix]
