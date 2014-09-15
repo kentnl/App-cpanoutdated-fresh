@@ -141,17 +141,31 @@ sub _check_fresh {
   my $mm = Module::Metadata->new_from_file($file);
   return if not $mm;
 
+  my $mm_version = $mm->version;
+
   my $v = version->parse( $module->{version} );
 
-  if ( $mm->version >= $v ) {
+  if ( not defined $v and not defined $mm_version ) {
+    return;
+  }
+  if ( defined $v and not defined $mm_version ) {
+
+    # noop, upstream got defined vs local, == upgrade
+  }
+  elsif ( not defined $v and defined $mm_version ) {
+
+    # uhh, have version locally but not upstream, DONT upgrade
+    return;
+  }
+  elsif ( $mm_version >= $v ) {
     return;
   }
 
   return {
     name      => $module->{name},
-    cpan      => $v->stringify,
+    cpan      => ( $v ? $v->stringify : q[0] ),
     release   => $data_hash->{release},
-    installed => $mm->version->stringify,
+    installed => ( $mm_version ? $mm_version->stringify : q[0] ),
     meta      => $data_hash,
   };
 
