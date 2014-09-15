@@ -166,7 +166,7 @@ sub _get_next {
   while ( my $scroll_result = $scroll->next ) {
     return unless $scroll_result;
     my $data_hash = $scroll_result->{'_source'} || $scroll_result->{'fields'};
-    my $cache_key = $data_hash->{distribution};
+    my $cache_key = $data_hash->{module};
     if ( $self->all_versions ) {
       $cache_key = $data_hash->{release};
     }
