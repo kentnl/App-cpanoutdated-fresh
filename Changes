@@ -1,6 +1,9 @@
 Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
+ [Bugfix]
+ - Be less overzealous about avoiding IO and catch upgrades where not all dists have version changes.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - develop: (suggests: ↑1)

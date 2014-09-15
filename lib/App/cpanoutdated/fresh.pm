@@ -162,11 +162,19 @@ sub _get_next {
   if ( not exists $self->{stash_cache} ) {
     $self->{stash_cache} = {};
   }
-  my $stash_cache = $self->{stash_cache};
+  if ( not exists $self->{upgrade_cache} ) {
+    $self->{upgrade_cache} = {};
+  }
+
+  my $stash_cache   = $self->{stash_cache};
+  my $upgrade_cache = $self->{upgrade_cache};
+
   while ( my $scroll_result = $scroll->next ) {
     return unless $scroll_result;
     my $data_hash = $scroll_result->{'_source'} || $scroll_result->{'fields'};
-    my $cache_key = $data_hash->{distribution};
+
+    my $cache_key   = $data_hash->{path};
+    my $upgrade_key = $data_hash->{author} . q[/] . $data_hash->{distribution} . q[/] . $data_hash->{version};
     if ( $self->all_versions ) {
       $cache_key = $data_hash->{release};
     }
@@ -182,7 +190,9 @@ sub _get_next {
     for my $module ( @{ $data_hash->{module} } ) {
       my $fresh_data = $self->_check_fresh( $data_hash, $module );
       next unless $fresh_data;
-      $stash_cache->{$cache_key} = 1;
+      next if $upgrade_cache->{$upgrade_key};
+      $upgrade_cache->{$upgrade_key} = 1;
+      $stash_cache->{$cache_key}     = 1;
       return $fresh_data;
     }
     $stash_cache->{$cache_key} = 1;
