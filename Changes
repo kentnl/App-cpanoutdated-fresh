@@ -1,6 +1,10 @@
 Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001002, see misc/*.deps* for details
+ - develop: (suggests: ↑1)
+ - test: (recommends: ↑1)
 
 0.001002 2014-08-30T10:32:13Z
  [Bugfix]
