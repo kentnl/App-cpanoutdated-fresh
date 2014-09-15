@@ -149,7 +149,7 @@ sub _check_fresh {
 
   return {
     name      => $module->{name},
-    cpan      => ( $v ? $v->stringify : '' ),
+    cpan      => ( $v ? $v->stringify : q[0] ),
     release   => $data_hash->{release},
     installed => $mm->version->stringify,
     meta      => $data_hash,
