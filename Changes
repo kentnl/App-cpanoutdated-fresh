@@ -1,6 +1,8 @@
 Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
+
+0.001003 2014-09-15T02:48:14Z
  [Bugfix]
  - Be less overzealous about avoiding IO and catch upgrades where not all dists have version changes.
 
