@@ -1,5 +1,14 @@
 Release history for App-cpanoutdated-fresh
 
+0.001003 2014-09-15T02:48:14Z
+ [Bugfix]
+ - Be less overzealous about avoiding IO and catch upgrades where not all dists have version changes.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001002, see misc/*.deps* for details
+ - develop: (suggests: ↑1)
+ - test: (recommends: ↑1)
+
 0.001002 2014-08-30T10:32:13Z
  [Bugfix]
  - Fix parsing timestamps to work as described.
