@@ -117,7 +117,7 @@
    "provides" : {
       "App::cpanoutdated::fresh" : {
          "file" : "lib/App/cpanoutdated/fresh.pm",
-         "version" : "0.001005"
+         "version" : "0.001006"
       }
    },
    "release_status" : "stable",
@@ -132,7 +132,7 @@
          "web" : "https://github.com/kentnl/App-cpanoutdated-fresh"
       }
    },
-   "version" : "0.001005",
+   "version" : "0.001006",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -651,7 +651,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.001005-source",
+                  "tag" : "0.001006-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -722,7 +722,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.001005",
+                  "tag" : "0.001006",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
