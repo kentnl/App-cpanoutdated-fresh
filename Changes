@@ -1,6 +1,8 @@
 Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
+
+0.001005 2014-09-19T07:03:13Z
  [Bugfix]
  - Handle fields being undef in string concat.
 
