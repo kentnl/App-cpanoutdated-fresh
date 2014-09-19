@@ -5,7 +5,7 @@ use utf8;
 
 package App::cpanoutdated::fresh;
 
-our $VERSION = '0.001004';
+our $VERSION = '0.001005';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
@@ -187,8 +187,11 @@ sub _get_next {
     return unless $scroll_result;
     my $data_hash = $scroll_result->{'_source'} || $scroll_result->{'fields'};
 
-    my $cache_key   = $data_hash->{path};
-    my $upgrade_key = $data_hash->{author} . q[/] . $data_hash->{distribution} . q[/] . $data_hash->{version};
+    my $cache_key = $data_hash->{path};
+    my $upgrade_key =
+        ( $data_hash->{author}       || 'NOAUTHOR' ) . q[/]
+      . ( $data_hash->{distribution} || 'NODISTRIBUTION' ) . q[/]
+      . ( $data_hash->{version}      || 'NOVERSION' );
     if ( $self->all_versions ) {
       $cache_key = $data_hash->{release};
     }
@@ -307,7 +310,7 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 
 =head1 VERSION
 
-version 0.001004
+version 0.001005
 
 =head1 METHODS
 
