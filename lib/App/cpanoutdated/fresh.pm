@@ -187,8 +187,11 @@ sub _get_next {
     return unless $scroll_result;
     my $data_hash = $scroll_result->{'_source'} || $scroll_result->{'fields'};
 
-    my $cache_key   = $data_hash->{path};
-    my $upgrade_key = $data_hash->{author} . q[/] . $data_hash->{distribution} . q[/] . $data_hash->{version};
+    my $cache_key = $data_hash->{path};
+    my $upgrade_key =
+        ( $data_hash->{author}       || 'NOAUTHOR' ) . q[/]
+      . ( $data_hash->{distribution} || 'NODISTRIBUTION' ) . q[/]
+      . ( $data_hash->{version}      || 'NOVERSION' );
     if ( $self->all_versions ) {
       $cache_key = $data_hash->{release};
     }
