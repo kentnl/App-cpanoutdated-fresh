@@ -65,6 +65,7 @@
             "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0",
             "Dist::Zilla::Plugin::Readme::Brief" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
+            "Dist::Zilla::Plugin::RemovePrereqs" : "0",
             "Dist::Zilla::Plugin::RemovePrereqs::Provided" : "0",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
@@ -108,7 +109,6 @@
             "Path::ScanINC" : "0",
             "Pod::Usage" : "0",
             "Search::Elasticsearch" : "0",
-            "Search::Elasticsearch::Scroll" : "0",
             "perl" : "5.008",
             "strict" : "0",
             "utf8" : "0",
@@ -837,14 +837,16 @@
             "version" : "6.009"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "class" : "Dist::Zilla::Plugin::RemovePrereqs",
             "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "requires"
+               "Dist::Zilla::Plugin::RemovePrereqs" : {
+                  "modules_to_remove" : [
+                     "Search::Elasticsearch::Client::5_0::Scroll",
+                     "Search::Elasticsearch::Scroll"
+                  ]
                }
             },
-            "name" : "Prereqs",
+            "name" : "RemovePrereqs",
             "version" : "6.009"
          },
          {

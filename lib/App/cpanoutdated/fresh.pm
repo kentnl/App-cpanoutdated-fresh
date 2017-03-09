@@ -16,7 +16,6 @@ use Moo qw( has );
 use MooX::Lsub qw( lsub );
 use Getopt::Long;
 use Search::Elasticsearch;
-use Search::Elasticsearch::Scroll;
 use Module::Metadata;
 use Path::ScanINC;
 use Pod::Usage qw( pod2usage );
@@ -77,6 +76,12 @@ lsub all_versions => sub { undef };
 lsub authorized   => sub { 1 };
 lsub _inc_scanner => sub { Path::ScanINC->new() };
 
+sub _es_version {
+  my ( $self, $wanted_version ) = @_;
+  local $@ = undef;
+  return eval { $self->es->VERSION($wanted_version); 1 };    ## no critic (RequireCheckingReturnValueOfEval)
+}
+
 sub _mk_scroll {
   my ($self) = @_;
 
@@ -117,7 +122,7 @@ sub _mk_scroll {
     type   => 'module',
     size   => $self->scroll_size,
     body   => $body,
-    fields => $fields,
+    ( $self->_es_version(5) ? 'stored_fields' : 'fields' ) => $fields,
   );
   if ( not $self->_sort ) {
     $scrollargs{'search_type'} = 'scan';
@@ -125,6 +130,10 @@ sub _mk_scroll {
   else {
     $body->{sort} = { 'stat.mtime' => $self->_sort };
   }
+  ( $self->_es_version(5) )
+    ? ( require Search::Elasticsearch::Client::5_0::Scroll )
+    : ( require Search::Elasticsearch::Scroll );
+
   return $self->es->scroll_helper(%scrollargs);
 }
 

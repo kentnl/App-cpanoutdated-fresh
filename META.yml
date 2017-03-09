@@ -35,7 +35,6 @@ requires:
   Path::ScanINC: '0'
   Pod::Usage: '0'
   Search::Elasticsearch: '0'
-  Search::Elasticsearch::Scroll: '0'
   perl: '5.008'
   strict: '0'
   utf8: '0'
