@@ -1,5 +1,7 @@
 Release history for App-cpanoutdated-fresh
 
+0.001007 2017-03-09T06:32:36Z 520e6a8
+
 0.001006 2017-03-09T06:03:03Z 2e29975
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
  - Bugfix: Make compatible with ES5

@@ -4,7 +4,7 @@ use warnings;
 
 package App::cpanoutdated::fresh;
 
-our $VERSION = '0.001006';
+our $VERSION = '0.001007';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
@@ -318,7 +318,7 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 
 =head1 VERSION
 
-version 0.001006
+version 0.001007
 
 =head1 METHODS
 

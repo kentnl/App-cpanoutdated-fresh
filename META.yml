@@ -23,7 +23,7 @@ name: App-cpanoutdated-fresh
 provides:
   App::cpanoutdated::fresh:
     file: lib/App/cpanoutdated/fresh.pm
-    version: '0.001006'
+    version: '0.001007'
 recommends:
   Moo: '1.000008'
 requires:
@@ -43,4 +43,4 @@ resources:
   bugtracker: https://github.com/kentnl/App-cpanoutdated-fresh/issues
   homepage: https://github.com/kentnl/App-cpanoutdated-fresh
   repository: https://github.com/kentnl/App-cpanoutdated-fresh.git
-version: '0.001006'
+version: '0.001007'
