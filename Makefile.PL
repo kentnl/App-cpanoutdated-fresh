@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.008;
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
     "bin/cpan-outdated-fresh"
   ],
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.008",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "App::cpanoutdated::fresh",
   "PREREQ_PM" => {
     "Carp" => 0,
@@ -29,7 +29,6 @@ my %WriteMakefileArgs = (
     "Pod::Usage" => 0,
     "Search::Elasticsearch" => 0,
     "strict" => 0,
-    "utf8" => 0,
     "version" => 0,
     "warnings" => 0
   },
@@ -64,7 +63,6 @@ my %FallbackPrereqs = (
   "Test::Fatal" => 0,
   "Test::More" => "0.96",
   "strict" => 0,
-  "utf8" => 0,
   "version" => 0,
   "warnings" => 0
 );

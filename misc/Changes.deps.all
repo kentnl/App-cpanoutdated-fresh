@@ -2,7 +2,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
 0.001006
  [Added / configure requires]
- - perl 5.008
+ - perl 5.006
 
  [Added / develop recommends]
  - Test::More 0.99
@@ -28,7 +28,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Moo 1.000008
 
  [Added / test requires]
- - perl 5.008
+ - perl 5.006
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.98 → 7.00
@@ -43,6 +43,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::App::Command::bakeini 0.001002 → 0.002006
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.020001 → 2.025021
 
+ [Changed / runtime requires]
+ - perl 5.008 → 5.006
+
  [Changed / test recommends]
  - ExtUtils::MakeMaker 6.98 → 7.00
  - Test::More 1.001006 → 0.99
@@ -54,6 +57,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Removed / runtime requires]
  - Search::Elasticsearch::Scroll
+ - utf8
 
 0.001005 2014-09-19T07:03:13Z
 
