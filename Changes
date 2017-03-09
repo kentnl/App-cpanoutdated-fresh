@@ -2,12 +2,13 @@ Release history for App-cpanoutdated-fresh
 
 {{$NEXT}}
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
+ - Bugfix: Make compatible with ES5
 
  [Dependencies::Stats]
  - Dependencies changed since 0.001005, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
- - develop: +14 ↑4 -3 (recommends: +1, suggests: ↑2)
- - runtime: (recommends: +1)
+ - develop: +15 ↑4 -3 (recommends: +1, suggests: ↑2)
+ - runtime: -1 (recommends: +1)
  - test: +1 (recommends: ↑1 ↓1)
 
 0.001005 2014-09-19T07:03:13Z

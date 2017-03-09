@@ -15,6 +15,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps
  - Dist::Zilla::Plugin::Prereqs::Upgrade
  - Dist::Zilla::Plugin::Readme::Brief
+ - Dist::Zilla::Plugin::RemovePrereqs
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
  - Dist::Zilla::Plugin::Test::EOL
  - English
@@ -50,6 +51,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::EOLTests
  - Dist::Zilla::Plugin::MetaYAML
  - Dist::Zilla::Plugin::ReadmeFromPod
+
+ [Removed / runtime requires]
+ - Search::Elasticsearch::Scroll
 
 0.001005 2014-09-19T07:03:13Z
 

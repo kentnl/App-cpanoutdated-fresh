@@ -12,6 +12,7 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps
  - Dist::Zilla::Plugin::Prereqs::Upgrade
  - Dist::Zilla::Plugin::Readme::Brief
+ - Dist::Zilla::Plugin::RemovePrereqs
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
  - Dist::Zilla::Plugin::Test::EOL
  - English
