@@ -1,11 +1,10 @@
-use 5.008;    # utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package App::cpanoutdated::fresh;
 
-our $VERSION = '0.001005';
+our $VERSION = '0.001006';
 
 # ABSTRACT: Indicate out-of-date modules by walking the metacpan releases backwards
 
@@ -16,7 +15,6 @@ use Moo qw( has );
 use MooX::Lsub qw( lsub );
 use Getopt::Long;
 use Search::Elasticsearch;
-use Search::Elasticsearch::Scroll;
 use Module::Metadata;
 use Path::ScanINC;
 use Pod::Usage qw( pod2usage );
@@ -77,6 +75,12 @@ lsub all_versions => sub { undef };
 lsub authorized   => sub { 1 };
 lsub _inc_scanner => sub { Path::ScanINC->new() };
 
+sub _es_version {
+  my ( $self, $wanted_version ) = @_;
+  local $@ = undef;
+  return eval { $self->es->VERSION($wanted_version); 1 };    ## no critic (RequireCheckingReturnValueOfEval)
+}
+
 sub _mk_scroll {
   my ($self) = @_;
 
@@ -117,7 +121,7 @@ sub _mk_scroll {
     type   => 'module',
     size   => $self->scroll_size,
     body   => $body,
-    fields => $fields,
+    ( $self->_es_version(5) ? 'stored_fields' : 'fields' ) => $fields,
   );
   if ( not $self->_sort ) {
     $scrollargs{'search_type'} = 'scan';
@@ -125,6 +129,10 @@ sub _mk_scroll {
   else {
     $body->{sort} = { 'stat.mtime' => $self->_sort };
   }
+  ( $self->_es_version(5) )
+    ? ( require Search::Elasticsearch::Client::5_0::Scroll )
+    : ( require Search::Elasticsearch::Scroll );
+
   return $self->es->scroll_helper(%scrollargs);
 }
 
@@ -310,7 +318,7 @@ App::cpanoutdated::fresh - Indicate out-of-date modules by walking the metacpan 
 
 =head1 VERSION
 
-version 0.001005
+version 0.001006
 
 =head1 METHODS
 
@@ -340,7 +348,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

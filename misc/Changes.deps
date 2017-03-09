@@ -1,6 +1,20 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.001005
+0.001006
+ [Added / configure requires]
+ - perl 5.006
+
+ [Added / test requires]
+ - perl 5.006
+
+ [Changed / runtime requires]
+ - perl 5.008 → 5.006
+
+ [Removed / runtime requires]
+ - Search::Elasticsearch::Scroll
+ - utf8
+
+0.001005 2014-09-19T07:03:13Z
 
 0.001004 2014-09-15T10:46:44Z
 
@@ -16,4 +30,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Test::More 0.89 → 0.96
 
 0.001001 2014-08-30T00:39:10Z
-
