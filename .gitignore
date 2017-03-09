@@ -1,2 +1,3 @@
-.build
-App-cpanoutdated-fresh-*
+/.build
+/App-cpanoutdated-fresh-*
+/tmp/
