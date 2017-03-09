@@ -4,7 +4,7 @@ cpan-outdated-fresh - Indicate out-of-date modules by walking the metacpan relea
 
 # VERSION
 
-version 0.001006
+version 0.001007
 
 # SYNOPSIS
 
